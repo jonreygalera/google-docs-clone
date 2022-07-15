@@ -14,4 +14,8 @@ io.on("connection", socket => {
             socket.broadcast.to(documentId).emit("receive-changes", delta);
         });
     });
+
+    socket.on("save-document", data => {
+        console.log(data);
+    });
 });
